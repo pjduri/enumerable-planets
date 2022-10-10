@@ -2,21 +2,23 @@ package org.launchcode.enumerableplanets.data;
 
 public enum Planets {
 
-    MERCURY("Mercury", 88),
-    VENUS("Venus", 225),
-    EARTH("Earth", 365),
-    MARS("Mars", 687),
-    JUPITER("Jupiter", 4333),
-    SATURN("Saturn", 10759),
-    URANUS("Uranus", 30687),
-    NEPTUNE("Neptune", 60200);
+    MERCURY("Mercury", 88, "Terrestrial"),
+    VENUS("Venus", 225, "Terrestrial"),
+    EARTH("Earth", 365, "Terrestrial"),
+    MARS("Mars", 687, "Terrestrial"),
+    JUPITER("Jupiter", 4333, "Gas Giant"),
+    SATURN("Saturn", 10759, "Gas Giant"),
+    URANUS("Uranus", 30687, "Ice Giant"),
+    NEPTUNE("Neptune", 60200, "Ice Giant");
 
     private String name;
     private int yearLength;
+    private String type;
 
-    Planets(String name, int yearLength) {
+    Planets(String name, int yearLength, String type) {
         this.name = name;
         this.yearLength = yearLength;
+        this.type = type;
     }
 
     public String getName() {
@@ -25,6 +27,10 @@ public enum Planets {
 
     public int getYearLength() {
         return yearLength;
+    }
+
+    public String getType() {
+        return type;
     }
 
 }
