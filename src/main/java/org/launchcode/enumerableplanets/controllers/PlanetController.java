@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 public class PlanetController {
 
     @GetMapping
-    public String displayIndex(@ModelAttribute Model model) {
+    public String displayIndex(Model model) {
         model.addAttribute("planets", Planets.values());
         return "index";
     }
